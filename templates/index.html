@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Mobile Price pridiction</title>
+</head>
+<style type="">
+body {
+    font-family: Garamond, serif; font-size: 12px; font-style: normal; font-variant: normal; font-weight: 150; line-height: 5px;
+    background: url('https://thelocalbrand.com/wp-content/uploads/2013/12/Mobile-Phone-Trends-2014.jpg') no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+.center {
+  margin: auto;
+  width: 60%;
+  padding: 10px;
+  border: none;
+  background-color: #000000 ;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+}
+h2{
+  text-align: center;
+  color: white;
+}
+h3{
+  color: white;
+}
+div {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+
+input[type=submit] {
+  width: 100%;
+  background-color: #18d1ed;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #db1f48;
+}
+input[type=float],textarea{
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border:none;
+  border-radius: 4px;
+  background-color: #42e6f5;
+}
+select {
+  width: 50%;
+  padding: 4px 5px;
+  border: none;
+  border-radius: 4px;
+  background-color: #f1f1f1;
+  background-color: #42e6f5
+
+}
+
+</style>
+<script type="text/javascript">
+  
+</script>
+<body>
+  <h2>Mobile Price Prediction</h2>
+  <div class="center">
+  <form action="{{ url_for('predict')}}" method="post">
+  <h3>Battery Capacity : <input id="1" type="float" name="battery_power" placeholder="Enter Battery Capacity" min="1"></h3> 
+  <h3>Clock Speed: <input id="1b" type="float" name="clock_speed" placeholder="Enter Clock Speed"></h3>
+    <h3>Bluetooth :<select id="2" name="blue"></h3>
+        <option value="Yes">Yes</option>
+        <option value="No">No</option>
+    </select>
+    <h3>Dual Sim :<select id="4" name="dual_sim"></h3>
+        <option value="Yes">Yes</option>
+        <option value="No">No</option>
+    </select>
+    <h3>4G :<select id="5" name="four_g"></h3>
+        <option value="Yes">Yes</option>
+        <option value="No">No</option>
+    </select>
+    <h3>Front Camera : <input id="6" type="float" name="fc" placeholder="Enter Mega pixels"></h3>
+    <h3>Internal Memory : <input id="7" type="float" name="int_memory" placeholder="Enter Internal Memory"></h3>
+    <h3>Mobile depth : <input id="8" type="float" name="m_dep" placeholder="Enter Mobile depth"></h3>
+    <h3>Mobile Weight : <input id="9" type="float" name="mobile_wt" placeholder="Enter Mobile Weight"></h3>
+    <h3>Number of cores: <input id="10" type="float" name="n_cores" placeholder="Enter number of Cores"></h3>
+    <h3>Primary Camera : <input id="11" type="float" name="pc" placeholder="Enter Mega pixels"></h3>
+    <h3>Pixel Height: <input id="12" type="float" name="px_height" placeholder="Enter Pixel Height"></h3>
+    <h3>Pixel width: <input id="13" type="float" name="px_width" placeholder="Enter Pixel width"></h3>
+    <h3>Ram: <input id="14" type="float" name="ram" placeholder="RAM Details"></h3>
+    <h3>Screen Height: <input id="15" type="float" name="sc_h" placeholder="Enter Screen Height"></h3>
+    <h3>Screen Width: <input id="16" type="float" name="sc_w" placeholder="Enter Screen Width"></h3>
+    <h3>Talk Time: <input id="17" type="float" name="talk_time" placeholder="Enter Number of hours"></h3>
+    <h3>3G :<select id="18" name="three_g"></h3>
+        <option value="Yes">Yes</option>
+        <option value="No">No</option>
+    </select>
+    <h3>Touch Screen:<select id="19" name="touch_screen"></h3>
+        <option value="Yes">Yes</option>
+        <option value="No">No</option>
+    </select>
+    <h3>WIFI :<select id="20" name="wifi"></h3>
+        <option value="Yes">Yes</option>
+        <option value="No">No</option>
+    </select> 
+    <input type="submit" name="bu" value="Estimate">
+    <h2>{{ prediction_text }}<h2>
+    </div>
+</form>
+</body>
+</html>
